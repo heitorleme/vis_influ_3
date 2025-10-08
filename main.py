@@ -15,8 +15,8 @@ load_dotenv(".env.txt")
 CAPTIV8_API_KEY = os.getenv("CAPTIV8_API_KEY")
 APIFY_KEY = os.getenv("APIFY_KEY")
 
-st.set_page_config(page_title="Análise Captiv8 • Instagram", page_icon="📊", layout="wide")
-st.title("📊 Análise de Influenciadores (Captiv8 + Instagram)")
+st.set_page_config(page_title="Análise de Influenciadores • Instagram", page_icon="📊", layout="wide")
+st.title("📊 Análise de Influenciadores")
 
 # =========================
 # Sidebar
@@ -24,9 +24,7 @@ st.title("📊 Análise de Influenciadores (Captiv8 + Instagram)")
 with st.sidebar:
     st.markdown("### Configurações")
     st.markdown("- Informe um ou mais @usernames do Instagram (um por linha ou separados por vírgula).")
-    st.markdown("- Tenha sua **CAPTIV8_API_KEY** configurada no arquivo `.env.txt`.")
     st.divider()
-    st.caption("Este app usa a API pública do Captiv8 para coletar os dados.")
 
     user_input = st.text_area("Usernames do Instagram", placeholder="fulano", height=120)
     btn = st.button("Analisar", type="primary")
@@ -118,4 +116,5 @@ if "resultado_df" in st.session_state:
             mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
         )
     else:
+
         st.warning("Nenhum dado foi retornado pela análise.")
