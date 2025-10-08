@@ -1,0 +1,10 @@
+streamlit>=1.35
+pandas>=2.2
+numpy>=1.26
+scipy>=1.11
+matplotlib>=3.8
+xlsxwriter>=3.1
+openpyxl>=3.1
+python-dotenv>=1.0
+requests>=2.31
+apify-client>=1.7
